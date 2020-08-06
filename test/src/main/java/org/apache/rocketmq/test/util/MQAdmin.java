@@ -31,6 +31,15 @@ import org.apache.rocketmq.tools.command.CommandUtil;
 public class MQAdmin {
     private static Logger log = Logger.getLogger(MQAdmin.class);
 
+
+    public static void main(String[] args) {
+
+        createTopic("127.0.0.1:9876",
+                "DefaultCluster",
+                "TopicTest",
+                2);
+    }
+
     public static boolean createTopic(String nameSrvAddr, String clusterName, String topic,
         int queueNum) {
         int defaultWaitTime = 5;
